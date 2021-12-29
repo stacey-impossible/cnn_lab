@@ -41,3 +41,17 @@ test_loss, test_acc = model.evaluate(test_images, test_labels, verbose=2)
 
 print(test_acc)
 
+prediction2=model.predict(test_images)
+
+print(prediction2)
+
+pred_y=[]
+for x in prediction2:
+  m=max(x)
+
+  for i in range(len(x)):
+    if x[i]==m:
+      pred_y+=[i]
+
+print(pred_y[:10])
+
